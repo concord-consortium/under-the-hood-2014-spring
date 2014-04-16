@@ -32,11 +32,11 @@
 
     interactives.forEach(function(me){
       me.addEventListener('play', function (){
-        stopInteractivesThatArent(me);
+        stopInteractivesThatAreNot(me);
       });
     })
 
-    function stopInteractivesThatArent(me) {
+    function stopInteractivesThatAreNot(me) {
       interactives.forEach(function (interactive){
         if (interactive !== me) {
           interactive.stop();
