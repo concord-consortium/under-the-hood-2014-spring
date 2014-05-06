@@ -7,6 +7,9 @@
   function modelLoaded(interactive) {
     interactive.addEventListener = addEventListener;
     interactive.stop = stop;
+    // load custom interactive this is because we need to cram these interactives
+    // into a very small space.
+    interactive.post('loadInteractive', SIMPLE_GAS_INTERACTIVE);
     return new RSVP.Promise(function(resolve, reject){
       interactive.addListener('modelLoaded', function(){
         resolve(interactive);
